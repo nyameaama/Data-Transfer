@@ -11,10 +11,10 @@ class P_MAIN {
 
     public:
         template<typename PACKET_TYPE>
-        uint8_t send(PACKET_TYPE data, PACKET_TYPE (*method)(PACKET_TYPE));
+        uint32_t send(PACKET_TYPE data, PACKET_TYPE (*method)(char*));
 
         template<typename PACKET_TYPE>
-        uint8_t receive(PACKET_TYPE (*method));
+        PACKET_TYPE receive(char* (*method));
 
 
 

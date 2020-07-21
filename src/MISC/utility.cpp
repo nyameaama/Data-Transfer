@@ -33,10 +33,14 @@ char* itoa(int value, char* result, int base) {
     Nyameaama Gambrah
 */
 
-template<typename TYPE_DEF>
-TYPE_DEF MISC::PACKET_MERGE_2VALUES(TYPE_DEF x,TYPE_DEF y){
+char *MISC::PACKET_MERGE_2VALUES(unsigned int x,unsigned int y){
     //Separate strings with '_'
-    return (x + y);
+    char buf1[16];
+    char buf2[16];
+    itoa(x,buf1,10);
+    itoa(y,buf2,10);
+    auto final = strcat(buf1,buf2);
+    return final;
 }
 
 template<typename TYPE_DEF>

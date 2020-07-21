@@ -44,7 +44,7 @@ int CHECKSUM::generate_verhoeff(const char* num){
 
 //Validates that an entered number is Verhoeff compliant.
 //The check digit must be the last one.
-int CHECKSUM::validate_verhoeff(const char* num){
+int CHECKSUM::validate_verhoeff(char* num){
   int c;
   int len;
   c = 0;
