@@ -57,11 +57,8 @@ int CHECKSUM::validate_verhoeff(const char* num){
 }
 
 int CHECKSUM::verhoeffChecksum(const char* num){
-    int cDigit = generate_verhoeff(num);
-    
-
+   return generate_verhoeff(num);
 }
-
 
 uint32_t CHECKSUM::crc32c_checksum(char data){
     const char *message;// = data.c_str();

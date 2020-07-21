@@ -5,6 +5,8 @@
 
 class MISC {
     public:
+        char* itoa(int value, char* result, int base); 
+        
         template<typename TYPE_DEF>
         TYPE_DEF PACKET_MERGE_2VALUES(TYPE_DEF x,TYPE_DEF y);
 

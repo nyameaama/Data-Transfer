@@ -4,7 +4,7 @@ template<typename PACKET_TYPE>
 uint8_t P_MAIN::send(PACKET_TYPE data, PACKET_TYPE (*method)(PACKET_TYPE)){
     //CHECKSUM
     CHECKSUM *instance = new CHECKSUM();
-    auto checksum = instance -> crc32c_checksum(data);
+    auto checksum = instance -> generate_verhoeff(data);
     delete instance;
     //MERGE TO PACKET
     MISC *util = new MISC();
@@ -22,8 +22,8 @@ uint8_t P_MAIN::receive(PACKET_TYPE (*method)){
     delete util;
     //CHECKSUM FOREIGN DATA
 
-    //COMPARE CHECKSUMS
+    //VALIDATE CHECKSUMS
 
     //RETURN 
-
+    
 }
