@@ -1,7 +1,7 @@
 #include"checksum.h"
 
 // The multiplication table
-int verhoeff_d[][]  = {
+int verhoeff_d[10][10]  = {
   {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
   {1, 2, 3, 4, 0, 6, 7, 8, 9, 5},
   {2, 3, 4, 0, 1, 7, 8, 9, 5, 6},
@@ -15,7 +15,7 @@ int verhoeff_d[][]  = {
 };
 
 // The permutation table
-int verhoeff_p[][]= {
+int verhoeff_p[8][10]= {
   {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
   {1, 5, 7, 6, 2, 8, 3, 0, 9, 4},
   {5, 8, 0, 3, 7, 9, 6, 1, 4, 2},
