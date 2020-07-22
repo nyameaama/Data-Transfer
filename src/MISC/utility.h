@@ -14,7 +14,7 @@ class MISC {
         TYPE_DEF COMPARE_CHECKSUMS(TYPE_DEF CHECKSUM_A,TYPE_DEF CHECKSUM_B);
 
         template<typename TYPE_DEF>
-        TYPE_DEF *PARSE_PACKET(TYPE_DEF(*method));
+        TYPE_DEF *PARSE_PACKET(TYPE_DEF(*method)());
 
 };
 

@@ -14,7 +14,7 @@ class P_MAIN {
         uint32_t send(PACKET_TYPE data, PACKET_TYPE (*method)(char*));
 
         template<typename PACKET_TYPE>
-        PACKET_TYPE receive(char* (*method));
+        PACKET_TYPE receive(char* (*method)());
 
 
 

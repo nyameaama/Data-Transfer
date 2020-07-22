@@ -16,16 +16,17 @@ uint32_t P_MAIN::send(PACKET_TYPE data, PACKET_TYPE (*method)(char*)){
 }
 
 template<typename PACKET_TYPE>
-PACKET_TYPE P_MAIN::receive(char* (*method)){
+PACKET_TYPE P_MAIN::receive(char* (*method)()){
     //PARSE PACKET
     MISC *util = new MISC();
     auto *elements = util -> PARSE_PACKET((*method));
     delete util;
     //CHECKSUM FOREIGN DATA
     auto data = elements[0];
+    char checkDigit[16] = elements[1]; 
     //VALIDATE CHECKSUMS
     CHECKSUM *instance = new CHECKSUM();
-    auto validate = instance -> validate_verhoeff(elements[1]);
+    auto validate = instance -> validate_verhoeff(checkDigit);
     delete instance;
     //RETURN 
     return (validate == 0) ? elements[0] : 0;
