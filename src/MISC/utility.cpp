@@ -5,7 +5,7 @@
  * Written by Lukás Chmela
  * Released under GPLv3.
  */
-char* itoa(int value, char* result, int base) {
+char* MISC::itoa(int value, char* result, int base) {
     // check that the base if valid
     if (base < 2 || base > 36) { *result = '\0'; return result; }
 
@@ -54,11 +54,10 @@ TYPE_DEF MISC::COMPARE_CHECKSUMS(TYPE_DEF CHECKSUM_A,TYPE_DEF CHECKSUM_B){
 
 }
 
-template<typename TYPE_DEF>
-TYPE_DEF *MISC::PARSE_PACKET(TYPE_DEF(*method)()){
-    char parsed[16];
+char *MISC::PARSE_PACKET(char (*func)()){
+    /*char parsed[16];
     uint8_t buf1index,buf2index;
-    auto funcResult = (*method)();
+    auto funcResult = (func);
     for(size_t i : funcResult){
         if(funcResult[i] == '0'){
             if(funcResult[i + 1] == '0'){
@@ -77,5 +76,5 @@ TYPE_DEF *MISC::PARSE_PACKET(TYPE_DEF(*method)()){
         parsed[1] = strcat(parsed[1],funcResult[temp]);
         temp++;
     }
-    return parsed;
+    return parsed;*/
 }
