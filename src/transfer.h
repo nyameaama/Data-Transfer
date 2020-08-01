@@ -6,11 +6,9 @@
 
 class Transfer {
     public:
-        template<typename PACKET_TYPE>
-        uint8_t shift(PACKET_TYPE data, PACKET_TYPE (*method)(char*)){P_MAIN mov; mov.send(data,(*method));}
+        void shiftX(uint8_t data,void (*func)(char*)){P_MAIN sX; return sX.transmit(data,(func));}
 
-        template<typename PACKET_TYPE>
-        uint8_t collect(PACKET_TYPE (*method)()){P_MAIN mov; mov.receive((*method));}
+        char collectX(char (*func)()){P_MAIN cX;return cX.get((func));}
 
 };
 
