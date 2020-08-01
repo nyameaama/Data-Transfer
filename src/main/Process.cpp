@@ -31,3 +31,23 @@ PACKET_TYPE P_MAIN::receive(char* (*method)()){
     //RETURN 
     return (validate == 0) ? elements[0] : 0;
 }
+
+void P_MAIN::transmit(uint8_t data, void (*func)(char*)){
+    CHECKSUM *instance = new CHECKSUM();
+    MISC *util = new MISC();
+    //CHECKSUM
+    char* convertedData;
+    util->itoa(data,convertedData,10);
+    auto checksum = instance -> verhoeffChecksum(convertedData);
+    delete instance;
+    //MERGE TO PACKET
+    auto merged = util -> PACKET_MERGE_2VALUES(data,checksum);
+    delete util;
+    //OUTPUT METHOD
+    (*func)(merged);
+    return;
+}
+
+char P_MAIN::get(char (*func)()){
+
+}

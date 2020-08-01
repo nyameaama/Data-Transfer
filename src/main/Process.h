@@ -10,12 +10,9 @@ class P_MAIN {
         uint8_t createChecksum(uint8_t x);
 
     public:
-        template<typename PACKET_TYPE>
-        uint32_t send(PACKET_TYPE data, PACKET_TYPE (*method)(char*));
+        void transmit(uint8_t data, void (*func)(char*));
 
-        template<typename PACKET_TYPE>
-        PACKET_TYPE receive(char* (*method)());
-
+        char get(char (*func)());
 
 
 };
